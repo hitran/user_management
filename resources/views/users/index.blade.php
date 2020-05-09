@@ -4,29 +4,29 @@
 
 <div class="container">
     <div class="row">
-        <table class="table">
-            <thead class="thead-dark">
+        <table class="table margin-central">
                 <tr>
-                <th scope="col">#</th>
-                <th scope="col">User</th>
-                <th scope="col">Username</th>
-                <th scope="col">Email</th>
+                    <th>User ID</th>
+                    <th>User name</th>
+                    <th>Full name</th>
+                    <th>Created at</th>
+                    <th>Updated at</th>
+                    <th>Action</th>
                 </tr>
-            </thead>
-            <tbody>
             @foreach($users as $user)
                 <tr>
-                <td class="align-middle" scope="row">{{$user["id"]}}</td>
-                <td>
-                    <img src="{{$user['profile_img']}}" class="rounded-circle" style="width: 50px;"/>
-                    <span style="padding-left:10px;">{{$user["name"]}}</span>
-                </td>
-                <td class="align-middle">{{$user["username"]}}</td>
-                <td class="align-middle">{{$user["email"]}}</td>
+                    <th>{{ $user-> id }}</th>
+                    <th>{{ $user-> username }}</th>
+                    <th>{{ $user-> fullname }}</th>
+                    <th>{{ $user-> created_at }}</th>
+                    <th>{{ $user-> updated_at }}</th>
+                    <th>
+                        <a href="{{ url('userslist/edit/'.$user-> id) }}"><i class="fa fa-edit" style="font-size:24px"></i></a>
+                        <a><i class="fa fa-trash-o" style="font-size:24px" id="{{ $user-> id }}"></i></a>
+                    </th>
                 </tr>
             @endforeach
-            </tbody>
-        </table>
+            <table>
     </div>
 </div>
 @endsection

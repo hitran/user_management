@@ -14,3 +14,7 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', 'UsersController@index');
+Route::get('/checkDB', function ()
+{
+    dd(DB::connection()->getDatabaseName());
+});
