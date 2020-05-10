@@ -14,3 +14,7 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', 'UsersController@index');
+Route::post('/', 'UsersController@addNewUser');
+
+Route::get('/edit/{id}', 'UsersController@getUserDetail');
+Route::post('/edit/{id}', 'UsersController@updateUser');
